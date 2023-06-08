@@ -1,4 +1,4 @@
-# 🗺️ tunehive [🔗](https://tunehive.vercel.app/)
+# 🎵 tunehive [🔗](https://tunehive.vercel.app/)
 
 ## Stacks
 
