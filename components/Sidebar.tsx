@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import { useMemo } from "react";
 import { HiHome } from "react-icons/hi";
 import { BiSearch } from "react-icons/bi";
+
 import Box from "./Box";
 import SidebarItem from "./SidebarItem";
 import Library from "./Library";
@@ -50,7 +51,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children }) => {
           <Library />
         </Box>
       </div>
-      <main className="flex-1 h-full py-2 overflow-y-auto">{children}</main>
+      <main className="flex-1 h-full overflow-y-auto">{children}</main>
     </div>
   );
 };
