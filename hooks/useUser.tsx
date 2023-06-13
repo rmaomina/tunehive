@@ -8,10 +8,10 @@ import { createContext, useEffect, useState, useContext } from "react";
 import { Subscription, UserDetails } from "@/types";
 
 type UserContextType = {
-  accessToken: string | null;
   user: User | null;
-  userDetails: UserDetails | null;
   isLoading: boolean;
+  accessToken: string | null;
+  userDetails: UserDetails | null;
   subscription: Subscription | null;
 };
 
