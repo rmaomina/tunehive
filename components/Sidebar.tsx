@@ -48,7 +48,7 @@ const Sidebar: React.FC<SidebarProps> = ({ children, songs }) => {
     >
       <div
         className={twMerge(
-          `first-letter:hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2`,
+          `flex first-letter:hidden md:flex flex-col gap-y-2 bg-black h-full w-[300px] p-2`,
           player.activeId && "pb-0",
         )}
       >
