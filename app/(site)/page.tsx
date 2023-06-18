@@ -25,13 +25,15 @@ export default async function Home() {
       <Header className="">
         <div className="mb-2">
           <h1 className="text-3xl font-semibold text-white">{greeting}</h1>
-          <div className="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
-            <ListItem
-              image="/images/liked.jpg"
-              name="Liked Songs"
-              href="liked"
-            />
-          </div>
+          {greeting && (
+            <div className="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
+              <ListItem
+                image="/images/liked.jpg"
+                name="Liked Songs"
+                href="liked"
+              />
+            </div>
+          )}
         </div>
       </Header>
       <div className="px-6 mt-2 mb-7">
