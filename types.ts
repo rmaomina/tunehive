@@ -25,9 +25,10 @@ export interface Price {
   active?: boolean;
   description?: string;
   unit_amount?: number;
-  currentcy?: string;
+  currency?: string;
   type?: Stripe.Price.Type;
   interval?: Stripe.Price.Recurring.Interval;
+  interval_count?: number;
   trial_period_days?: number | null;
   metadata?: Stripe.Metadata;
   products?: Product;
