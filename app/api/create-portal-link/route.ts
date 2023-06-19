@@ -5,7 +5,6 @@ import { NextResponse } from "next/server";
 import { stripe } from "@/libs/stripe";
 import { getUrl } from "@/libs/helpers";
 import { createOrRetrieveCustomer } from "@/libs/supabaseAdmin";
-import { createRouteLoader } from "next/dist/client/route-loader";
 
 export async function POST() {
   try {
