@@ -28,6 +28,7 @@ const AccountContent: React.FC<AccountContentProps> = ({}) => {
       const { url, error } = await postData({
         url: "/api/create-portal-link",
       });
+      console.log(url);
       window.location.assign(url);
     } catch (error) {
       if (error) {
