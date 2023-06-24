@@ -8,9 +8,7 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { toast } from "react-hot-toast";
 
-interface AccountContentProps {}
-
-const AccountContent: React.FC<AccountContentProps> = ({}) => {
+const AccountContent = () => {
   const router = useRouter();
   const subscribeModal = useSubscribeModal();
   const { isLoading, subscription, user } = useUser();
@@ -22,21 +20,19 @@ const AccountContent: React.FC<AccountContentProps> = ({}) => {
     }
   }, [isLoading, user, router]);
 
-  const redirectToCustomerProtal = async () => {
+  const redirectToCustomerPortal = async () => {
     setLoading(true);
     try {
       const { url, error } = await postData({
         url: "/api/create-portal-link",
       });
-      console.log(url);
       window.location.assign(url);
     } catch (error) {
       if (error) {
         toast.error((error as Error).message);
       }
-
-      setLoading(false);
     }
+    setLoading(false);
   };
 
   return (
@@ -61,7 +57,7 @@ const AccountContent: React.FC<AccountContentProps> = ({}) => {
           <Button
             className="w-[300px]"
             disabled={loading || isLoading}
-            onClick={redirectToCustomerProtal}
+            onClick={redirectToCustomerPortal}
           >
             Open customer portal
           </Button>
