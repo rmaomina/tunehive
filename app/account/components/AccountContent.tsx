@@ -6,7 +6,6 @@ import { useUser } from "@/hooks/useUser";
 import { postData } from "@/libs/helpers";
 import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
-import { toast } from "react-hot-toast";
 
 const AccountContent = () => {
   const router = useRouter();
@@ -28,9 +27,7 @@ const AccountContent = () => {
       });
       window.location.assign(url);
     } catch (error) {
-      if (error) {
-        toast.error((error as Error).message);
-      }
+      if (error) return alert((error as Error).message);
     }
     setLoading(false);
   };
