@@ -34,6 +34,11 @@ export interface Price {
   products?: Product;
 }
 
+export interface Customer {
+  id: string;
+  stripe_customer_id?: string;
+}
+
 export interface Subscription {
   id: string;
   user_id: string;
