@@ -16,7 +16,7 @@ import usePlayer from "@/hooks/usePlayer";
 
 interface HeaderProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ children, className }) => {
@@ -25,7 +25,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
   const player = usePlayer();
 
   const supabaseClient = useSupabaseClient();
-  const { user, subscription } = useUser();
+  const { user } = useUser();
 
   const handleLogout = async () => {
     const { error } = await supabaseClient.auth.signOut();
@@ -35,8 +35,6 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
 
     if (error) {
       toast.error(error.message);
-    } else {
-      toast.success("Logged out!");
     }
   };
 
@@ -51,7 +49,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
         <div className="items-center hidden md:flex gap-x-2">
           <button
             onClick={() => router.back()}
-            className="flex items-center justify-center transition bg-black rounded-full hover:opacity-75"
+            className="flex items-center justify-center transition bg-black rounded-full cursor-pointer hover:opacity-75"
           >
             <RxCaretLeft
               size={34}
@@ -60,7 +58,7 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           </button>
           <button
             onClick={() => router.forward()}
-            className="flex items-center justify-center transition bg-black rounded-full hover:opacity-75"
+            className="flex items-center justify-center transition bg-black rounded-full cursor-pointer hover:opacity-75"
           >
             <RxCaretRight
               size={34}
@@ -69,13 +67,19 @@ const Header: React.FC<HeaderProps> = ({ children, className }) => {
           </button>
         </div>
         <div className="flex items-center md:hidden gap-x-2">
-          <button className="flex items-center justify-center p-2 transition bg-white rounded-full hover:opacity-75">
+          <button
+            onClick={() => router.push("/")}
+            className="flex items-center justify-center p-2 transition bg-white rounded-full cursor-pointer hover:opacity-75"
+          >
             <HiHome
               size={20}
               className="text-black"
             />
           </button>
-          <button className="flex items-center justify-center p-2 transition bg-white rounded-full hover:opacity-75">
+          <button
+            onClick={() => router.push("/search")}
+            className="flex items-center justify-center p-2 transition bg-white rounded-full cursor-pointer hover:opacity-75"
+          >
             <BiSearch
               size={20}
               className="text-black"

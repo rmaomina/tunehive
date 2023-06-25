@@ -11,7 +11,7 @@ export default async function Home() {
 
   return (
     <div className="w-full h-full overflow-hidden overflow-y-auto rounded bg-neutral-900">
-      <Header className="">
+      <Header>
         <div className="mb-2">
           <h1 className="text-3xl font-semibold text-white ">Welcome back</h1>
           <div className="grid grid-cols-1 gap-3 mt-4 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4">
